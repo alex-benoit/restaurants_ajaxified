@@ -2,6 +2,9 @@
 
 <ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <li id="restaurant_<%= restaurant.id %>">
+      <%= link_to restaurant.name, restaurant_path(restaurant) %> -
+      <%= link_to 'Remove', restaurant_path(restaurant), method: :delete, remote: true %>
+    </li>
   <% end %>
 </ul>
